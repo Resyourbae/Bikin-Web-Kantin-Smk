@@ -57,10 +57,23 @@
         box-shadow: -8px 6px 5px #A6A3A3;
     }
 
-    /* .card {
-        height: auto;
-        width: 20%;
-        /* object-fit: cover; */
+    .container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .card-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        gap: 1rem;
+    }
+
+    .card-img-top {
+        max-height: 200px;
+        object-fit: cover;
+    }
 </style>
 
 <body>
@@ -131,25 +144,136 @@
         <!-- Input Pesanan end -->
 
         <!-- card menu start -->
-        <div class="container text-center mt-4"  data-aos="fade-up" data-aos-duration="2000">
-        <div class=" row align-items-start">
-            <div class="card" style="width: 18rem;">
-            <div class="card-body col ">
-                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="...">
-                    <h5 class="card-title"> <i class="fa-solid fa-fire"></i> <span class="badge text-bg-secondary">Card title</span> <i class="fa-solid fa-fire"></i></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class=" container text-center p-5" data-aos="fade-up" data-aos-duration="2000">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card-columns" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <div class="card" style="width: 18rem;">
-            <div class="card-body col">
-                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="...">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="./img/5b294d3e-41ec-4ded-9322-28efb0501d86.png" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </div>
         <!-- card menu end -->
 
