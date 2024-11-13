@@ -1,1 +1,24 @@
+<!-- php conection start -->
+<?php 
+    // koneksi db start
+    include "koneksi.php";
+// koneksi db end
 
+// Meninmpan data dari btn pesan start
+if (isset($_POST['btnpesan'])) {
+    $pesan = mysqli_query($con, "INSERT INTO tb_pembeli(Nama, Kelas, Makanan, Minuman) VALUES 
+    ('$_POST[Nama]','$_POST[Kelas]','$_POST[Makanan]','$_POST[Minuman]')");
+
+        // jika Simpan sukses
+        if($pesan){
+            echo "<script>alert('Berhasil Pesan')</script>";
+            echo "<script>window.location.href='beranda.php'</script>";
+        }
+        else{
+            echo "<script>alert('Gagal Pesan')</script>";
+            echo "<script>window.location.href='beranda.php'</script>";
+        }
+    }
+    // Meninmpan data dari btn pesan end
+?>
+<!-- php conection end -->
