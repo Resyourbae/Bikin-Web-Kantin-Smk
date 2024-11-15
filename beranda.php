@@ -1,3 +1,28 @@
+<!-- php conection start -->
+<?php 
+    // koneksi db start
+    include "koneksi.php";
+// koneksi db end
+
+// Meninmpan data dari btn pesan start
+if (isset($_POST['btnpesan'])) {
+    $pesan = mysqli_query($con, "INSERT INTO tb_pembeli(Nama, Kelas, Makanan, Minuman) VALUES 
+    ('$_POST[Nama]','$_POST[Kelas]','$_POST[Makanan]','$_POST[Minuman]')");
+
+        // jika Simpan sukses
+        if($pesan){
+            echo "<script>alert('Berhasil Pesan')</script>";
+            echo "<script>window.location.href='beranda.php'</script>";
+        }
+        else{
+            echo "<script>alert('Gagal Pesan')</script>";
+            echo "<script>window.location.href='beranda.php'</script>";
+        }
+    }
+    // Meninmpan data dari btn pesan end
+?>
+<!-- php conection end -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,19 +156,19 @@
             </h3>
             <div>
                 <label for="nama">Nama <i class="fa-solid fa-user"></i></label>
-                <input type="text" class="form-control" name="nama" id="nama">
+                <input type="text" class="form-control" name="Nama" id="nama">
             </div>
             <div>
                 <label for="kelas">Kelas <i class="fa-solid fa-school"></i></label>
-                <input type="text" class="form-control" name="kelas" id="kelas">
+                <input type="text" class="form-control" required name="Kelas" id="kelas">
             </div>
             <div>
                 <label for="makanan">Makanan <i class="fa-solid fa-burger"></i></label>
-                <input type="text" class="form-control" name="makanan" id="makanan">
+                <input type="text" class="form-control" required name="Makanan" id="makanan">
             </div>
             <div>
                 <label for="minuman">Minuman <i class="fa-solid fa-mug-hot"></i></label>
-                <input type="text" class="form-control" name="minuman" id="minuman">
+                <input type="text" class="form-control" required name="Minuman" id="minuman">
             </div>
             <div class="d-grid gap-1 col-4 mx-auto">
                 <button class="btn btn-outline-primary form-control mt-4" type="submit" name="btnpesan">pesan</button>

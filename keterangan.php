@@ -1,3 +1,7 @@
+<?php 
+ include "koneksi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,36 +63,55 @@
       <table class="table table-dark table-striped">
   <thead>
     <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Kelas</th>
-      <th scope="col">Nama Pesanan</th>
-      <th scope="col">Action</th>
+      <th scope="col" class="text-center">No</th>
+      <th scope="col" class="text-center">Nama</th>
+      <th scope="col" class="text-center">Kelas</th>
+      <th scope="col" class="text-center" colspan="2">Nama Pesanan</th>
+      <th scope="col" class="text-center">Action</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
+
+  <?php 
+  $no = 1;
+  $upload = mysqli_query($con, "SELECT * FROM tb_pembeli");
+  while($data = mysqli_fetch_array($upload)):
+  ?>
+
+  <tr>
+    <td class="text-center"><?=$no++?></td>
+    <td class="text-center"><?=$data['Nama']?></td>
+    <td class="text-center"><?=$data['Kelas']?></td>
+    <td class="text-center"><?=$data['Makanan']?></td>
+    <td class="text-center"><?=$data['Minuman']?></td>
+    <td class="text-center">
+      <a href="ubahdata.php?id=<?=$data['Id'];?>"><button class="btn btn-primary">Ubah</button></a>
+      <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?=$no?>">Hapus</a>
+    </td>
+  </tr>
+  <!-- modal hapus start-->
+    <div class="modal fade" id="hapus<?=$no?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="staticBackdropLabel">Konfirmasi</h3>
+          </div>
+          <form method="post" action="hapus.php">
+            <input type="hidden" name="Nama" value="<?=$data['Nama']?>">
+            <div class="modal-body">
+              <h5 class="text-center">Apakah Anda Yakin Akan Menghapus Pesanan Ini? <br>
+            <span class="text-danger"><?=$data['Nama']?> - <?=$data['Kelas']?></span>
+          </h5>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-outline-primary" name="bhapus">Hapus</button>
+              <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal">Batal</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!-- modal hapus end-->
+  <?php endwhile; ?>
 </table>
 </div>
      <!-- table data end -->
